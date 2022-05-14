@@ -1,0 +1,30 @@
+<div class="accordion accordion-flush" id="accordionPanelsStayOpenExample" >
+  <div class="accordion-item" *ngFor="let nomes of df.nome; let i = index">
+    <h2 class="accordion-header" [id]="'flush-heading'+i">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#flush-collapse'+i" aria-expanded="false" [attr.aria-controls]="'flush-collapse'+i">
+        <div class="tabFerramenta" >
+          <div>
+              {{df.nome[i]}}
+          </div>
+          <div>
+            {{df.status[i]}}
+          </div>
+        </div>
+        </button>
+    </h2>
+    <div [id]="'flush-collapse'+i" class="accordion-collapse collapse" [attr.aria-labelledby]="'flush-heading'+i" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <div *ngIf="df.status[i] == 'Afiação'"> [["dados Afiação"]]</div>
+        <div *ngIf="df.status[i] == 'Manutenção'"> [["dados manutenção"]]</div>
+        <div *ngIf="df.status[i] == 'Reforma'"> [["dados Reforma"]]</div>
+        <div class="progress" style="height: 20px;">
+          <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">10 000 000 Batidas</div>
+        </div>
+        <div class="progress" style="height: 20px;">
+          <div class="progress-bar bg-danger" role="progressbar" style="width: 98%;"  aria-valuenow="490000" aria-valuemin="0" aria-valuemax="500000">490 000 Batidas sem afiação</div>
+        </div>
+        [[Todos o grafico sobre a ferramenta exibidos aqui]]
+      </div>
+    </div>
+  </div>
+</div>

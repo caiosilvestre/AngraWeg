@@ -1,0 +1,11 @@
+.tabFerramenta{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  justify-items: center;
+}
+.letra{
+  font-weight: 600;
+  font-size: 24px;
+  color: #FFFF;
+}
